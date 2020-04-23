@@ -1,8 +1,8 @@
 repos:
   name: hello-world
-    assign_issues: {hakuna matata, obama}
-    assign_prs:  {what a wonderful day}
+  assign_issues: {hakuna matata, obama}
+  assign_prs:  {what a wonderful day}
 
   name: repo2
-    assign_issues: {sofisl}
-    assign_prs: {sofisl}
+  assign_issues: {sofisl}
+  assign_prs: {sofisl}
