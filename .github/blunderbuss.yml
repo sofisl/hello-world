@@ -1,10 +1,10 @@
 repos:
   - name: 
     - hello-world
-  - assign_issues:
-    - hakuna matata
-  - assign_prs:
-    - what a wonderful day
+    - assign_issues:
+      - hakuna matata
+    - assign_prs:
+      - what a wonderful day
 
   - name:
     - repo2
