@@ -1,11 +1,13 @@
 repos:
-  - repo1:
+  - name: 
+    - repo1
   - assign_issues:
     - sofisl
   - assign_prs:
     - sofisl
 
-- repo2:
+  - name:
+    - repo2
   - assign_issues:
     - sofisl
   - assign_prs:
