@@ -1,12 +1,12 @@
 repos:
   name: hello-world
-    assign_issues: 
+    assign_issues:  
       - hakuna matata
-    assign_prs: 
+    assign_prs:  
       - what a wonderful day
 
   name: repo2
-    assign_issues: 
+    assign_issues:   
       - sofisl
-    assign_prs: 
+    assign_prs:  
       - sofisl
