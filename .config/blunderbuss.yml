@@ -1,4 +1,6 @@
 assign_issues:
   - sofisl
+  - sofiaTest-codes
 assign_prs:
   - sofisl
+  - sofiaTest-codes
