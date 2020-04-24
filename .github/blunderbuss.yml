@@ -1,7 +1,7 @@
-- assign_issues: 
-    - hakuna matata
-    - what a wonderful day
-  assign_prs: 
-    - is a problem free
-    - philosophy
-     
+repos:
+- assign_issues:
+  - hakuna matata
+  - hello_goodbye
+  assign_prs:
+  - wasa
+  - sfh
