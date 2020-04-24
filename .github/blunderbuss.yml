@@ -5,3 +5,11 @@ repo:
   assign_prs:
   - wasa
   - sfh
+- repoName: hello-world
+  assign_issues:
+  - wasza
+  - yoyoy
+  assign_prs:
+  - raerbgaer
+  - wejhfbweop
+
