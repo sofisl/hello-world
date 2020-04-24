@@ -1,10 +1,10 @@
 [
   assign_issues: 
-    - hakuna matata
-    - what a wonderful day
+    - 'hakuna matata'
+    - 'what a wonderful day'
   assign_prs: 
-    - is a problem free
-    - philosophy
+    - 'is a problem free'
+    - 'philosophy'
 ]
 
      
