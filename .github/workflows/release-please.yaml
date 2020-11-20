@@ -46,7 +46,7 @@ jobs:
       - uses: GoogleCloudPlatform/release-please-action@v2.7.0
         with:
            path: src/apis/${{ matrix.package }}
-           token: ${{ secrets.GITHUB_TOKEN }}
+           token: ${{ secrets.CREATE_A_FORK }}
            release-type: node
            package-name: ${{ matrix.package }}
            monorepo-tags: true
