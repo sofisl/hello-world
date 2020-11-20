@@ -47,6 +47,7 @@ jobs:
         with:
            path: src/apis/${{ matrix.package }}
            token: ${{ secrets.CREATE_A_FORK }}
+           fork: true
            release-type: node
            package-name: ${{ matrix.package }}
            monorepo-tags: true
