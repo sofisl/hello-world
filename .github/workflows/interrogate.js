@@ -12,20 +12,30 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-const {execSync} = require('child_process');
-execSync('git fetch origin master');
-const baseRef = process.env.GITHUB_BASE_REF;
-console.log(`base ref: ${baseRef}`);
-const status = execSync(`git diff --name-only origin/${baseRef}`, { encoding: 'utf-8'});
-console.log(status);
-const changes = status.split('\n');
-let nodePaths = new Set();
-let goPaths = new Set();
-let bashPaths = new Set();
-for (const change of changes) {
-  if (change.startsWith('src/apis/')) {
-      nodePaths.add(change.split('/')[2]);
-  };
+const core = require('@actions/core');
+const github = require('@actions/github');
+
+async function main() {
+  const {execSync} = require('child_process');
+  execSync('git fetch origin master');
+  const [owner, repo] = process.env.GITHUB_REPOSITORY.split('/');
+  const latestRelease = await octokit.repos.getLatestRelease({
+    owner,
+    repo
+  });
+  console.log(`latest release: ${latestRelease}`);
+  execSync(`git reset --hard ${latestRelease.tag_name}`);
+  const status = execSync(`git diff --name-only origin/master`, { encoding: 'utf-8'});
+  console.log(status);
+  const changes = status.split('\n');
+  let nodePaths = new Set();
+  for (const change of changes) {
+    if (change.startsWith('src/apis/')) {
+        nodePaths.add(change.split('/')[2]);
+    };
+  }
+  nodePaths = Array.from(nodePaths);
+  console.log(`::set-output name=nodePaths::${JSON.stringify(nodePaths)}`);
 }
-nodePaths = Array.from(nodePaths);
-console.log(`::set-output name=nodePaths::${JSON.stringify(nodePaths)}`);
+
+main();
