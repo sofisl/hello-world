@@ -15,7 +15,7 @@ jobs:
             github-token: ${{secrets.GITHUB_TOKEN}}
             script: |
               const {execSync} = require('child_process');
-              execSync('git fetch origin master');
+              execSync('git pull --tags');
               const [owner, repo] = process.env.GITHUB_REPOSITORY.split('/');
               const latestRelease = await github.repos.getLatestRelease({
                 owner,
