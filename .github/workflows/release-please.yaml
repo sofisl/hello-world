@@ -10,10 +10,30 @@ jobs:
       nodePaths: ${{ steps.interrogate.outputs.nodePaths }}
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: actions/github-script@v3
         with:
-          node-version: 12
-      - id: interrogate
+            github-token: ${{secrets.GITHUB_TOKEN}}
+            script: |
+              const {execSync} = require('child_process');
+              execSync('git fetch origin master');
+              const [owner, repo] = process.env.GITHUB_REPOSITORY.split('/');
+              const latestRelease = await github.repos.getLatestRelease({
+                owner,
+                repo
+              });
+              console.log(`latest release: ${latestRelease}`);
+              execSync(`git reset --hard ${latestRelease.tag_name}`);
+              const status = execSync(`git diff --name-only origin/master`, { encoding: 'utf-8'});
+              console.log(status);
+              const changes = status.split('\n');
+              let nodePaths = new Set();
+              for (const change of changes) {
+                if (change.startsWith('src/apis/')) {
+                    nodePaths.add(change.split('/')[2]);
+                };
+              }
+              nodePaths = Array.from(nodePaths);
+              console.log(`::set-output name=nodePaths::${JSON.stringify(nodePaths)}`);
         run: node ./.github/workflows/interrogate.js
         env:
           GITHUB_BASE_REF: ${{github.base_ref}}

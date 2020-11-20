@@ -12,11 +12,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-const core = require('@actions/core');
 const github = require('@actions/github');
 
 async function main() {
   const {execSync} = require('child_process');
+  const octokit = github.getOctokit(process.env.GIT);
   execSync('git fetch origin master');
   const [owner, repo] = process.env.GITHUB_REPOSITORY.split('/');
   const latestRelease = await octokit.repos.getLatestRelease({
