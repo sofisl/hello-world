@@ -34,9 +34,6 @@ jobs:
               }
               nodePaths = Array.from(nodePaths);
               console.log(`::set-output name=nodePaths::${JSON.stringify(nodePaths)}`);
-        run: node ./.github/workflows/interrogate.js
-        env:
-          GITHUB_BASE_REF: ${{github.base_ref}}
   release:
     runs-on: ubuntu-latest
     needs: changeFinder
