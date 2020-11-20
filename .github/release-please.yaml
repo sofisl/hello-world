@@ -1,0 +1,34 @@
+on:
+  push:
+    branches:
+      - master
+name: release-please
+jobs:
+  changeFinder:
+    runs-on: ubuntu-latest
+    outputs:
+      nodePaths: ${{ steps.interrogate.outputs.nodePaths }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - id: interrogate
+        run: node ./.github/workflows/interrogate.js
+        env:
+          GITHUB_BASE_REF: ${{github.base_ref}}
+  release:
+    runs-on: ubuntu-latest
+    needs: changeFinder
+    strategy:
+      fail-fast: false
+      matrix:
+        package: ${{fromJson(needs.changeFinder.outputs.nodePaths)}}
+    steps:
+      - uses: GoogleCloudPlatform/release-please-action@v2.7.0
+        with:
+           path: ./src/apis/${{ matrix.package }}
+           token: ${{ secrets.GITHUB_TOKEN }}
+           release-type: node
+           package-name: ${{ matrix.package }}
+           monorepo-tags: true
