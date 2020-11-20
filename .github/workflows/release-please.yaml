@@ -21,7 +21,7 @@ jobs:
                 owner,
                 repo
               });
-              console.log(`latest release: ${latestRelease}`);
+              console.log(`latest release: ${JSON.stringify(latestRelease)}`);
               execSync(`git reset --hard ${latestRelease.tag_name}`);
               const status = execSync(`git diff --name-only origin/master`, { encoding: 'utf-8'});
               console.log(status);
