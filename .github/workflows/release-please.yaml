@@ -60,6 +60,7 @@ jobs:
     needs: release
     steps: 
       - uses: actions/github-script@v3 
+      - id: tagging
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
@@ -71,4 +72,4 @@ jobs:
                 labels: 'autorelease: pending'
               });
               console.log(`Tagged ${{needs.release.outputs.prNumber}}`)
-        if: ${{needs.release.outputs.prNumber}}
+        if: ${{needs.release.outputs.prNumber}})
