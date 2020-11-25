@@ -45,7 +45,7 @@ jobs:
     outputs:
       prNumber: ${{ steps.release-please.outputs.pr }}
     steps:
-      - uses: GoogleCloudPlatform/release-please-action@v2.9.2
+      - uses: GoogleCloudPlatform/release-please-action@v2.9.3
         id: release-please
         with:
            path: src/apis/${{ matrix.package }}
@@ -73,3 +73,4 @@ jobs:
               });
               console.log(`Tagged ${{needs.release.outputs.prNumber}}`)
         if: ${{needs.release.outputs.prNumber}})
+
