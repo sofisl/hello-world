@@ -68,9 +68,9 @@ jobs:
               const latestRelease = await github.issues.addLabels({
                 owner,
                 repo,
-                issue_number: ${{needs.release.outputs.prNumber}}
+                issue_number: ${{needs.release-please.outputs.prNumber}},
                 labels: 'autorelease: pending'
               });
-              console.log(`Tagged ${{needs.release.outputs.prNumber}}`)
+              console.log(`Tagged ${{needs.release-please.outputs.prNumber}}`)
         if: ${{needs.release.outputs.prNumber}})
 
