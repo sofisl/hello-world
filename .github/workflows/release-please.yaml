@@ -43,7 +43,7 @@ jobs:
       matrix:
         package: ${{fromJson(needs.changeFinder.outputs.nodePaths)}}
     steps:
-      - uses: GoogleCloudPlatform/release-please-action@v2.7.0
+      - uses: GoogleCloudPlatform/release-please-action@v2.9.0
         with:
            path: src/apis/${{ matrix.package }}
            token: ${{ secrets.CREATE_A_FORK }}
