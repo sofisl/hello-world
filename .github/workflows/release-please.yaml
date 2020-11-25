@@ -55,22 +55,3 @@ jobs:
            release-type: node
            package-name: ${{ matrix.package }}
            monorepo-tags: true
-  tag:
-    runs-on: ubuntu-latest
-    needs: release
-    steps: 
-      - uses: actions/checkout@v2
-      - id: tagging
-        uses: actions/github-script@v3    
-        with:
-            github-token: ${{secrets.GITHUB_TOKEN}}
-            script: |
-              const [owner, repo] = process.env.GITHUB_REPOSITORY.split('/');
-              const latestRelease = await github.issues.addLabels({
-                owner,
-                repo,
-                issue_number: ${{needs.release.outputs.prNumber}}
-                labels: 'autorelease: pending'
-              });
-              console.log(`Tagged ${{needs.release.outputs.prNumber}}`)
-        if: ${{needs.release.outputs.prNumber}})
