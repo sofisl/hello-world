@@ -62,8 +62,8 @@ jobs:
       - uses: actions/github-script@v3 
       - id: tagging
         with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
-          script: |
+            github-token: ${{secrets.GITHUB_TOKEN}}
+            script: |
               const [owner, repo] = process.env.GITHUB_REPOSITORY.split('/');
               const latestRelease = await github.issues.addLabels({
                 owner,
