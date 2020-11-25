@@ -69,7 +69,7 @@ jobs:
                 owner,
                 repo,
                 issue_number: ${{needs.release.outputs.prNumber}},
-                labels: 'autorelease: pending'
+                labels: ['autorelease: pending']
               });
               console.log(`Tagged ${{needs.release.outputs.prNumber}}`)
         if: ${{needs.release.outputs.prNumber}})
