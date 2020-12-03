@@ -2,7 +2,7 @@ on:
   push:
     branches:
       - master
-name: release-please
+name: release-please-monorepo
 jobs:
   changeFinder:
     runs-on: ubuntu-latest
