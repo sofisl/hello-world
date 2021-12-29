@@ -14,7 +14,9 @@ steps:
       - 'HOME=/workspace'
   - name: 'gcr.io/cloud-builders/git'
     args:
-      - commit -m "first commit"
+      - commit 
+      - -m 
+      - "first commit"
     env:
       - 'HOME=/workspace'
    - name: 'gcr.io/cloud-builders/git'
