@@ -19,7 +19,7 @@ steps:
       - "first commit"
     env:
       - 'HOME=/workspace'
-   - name: 'gcr.io/cloud-builders/git'
+  - name: 'gcr.io/cloud-builders/git'
     args:
       - remote add origin git@github.com:sofisl/new-repo-test.git
     env:
