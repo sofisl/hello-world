@@ -25,6 +25,11 @@ steps:
       - commit 
       - -m 
       - "first commit"
+   - name: 'gcr.io/cloud-builders/git'
+    args:
+      - remote
+      - remove 
+      - origin
   - name: 'gcr.io/cloud-builders/git'
     args:
       - remote 
