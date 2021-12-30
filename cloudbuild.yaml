@@ -10,6 +10,14 @@ steps:
       - .
   - name: 'gcr.io/cloud-builders/git'
     args:
+      - config
+      - --global
+      - user.email
+      - "you@example.com"
+      - user.name
+      - sofisl
+  - name: 'gcr.io/cloud-builders/git'
+    args:
       - commit 
       - -m 
       - "first commit"
