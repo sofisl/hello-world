@@ -38,7 +38,6 @@ steps:
       - git@github.com:sofisl/new-repo-test.git
   - name: 'gcr.io/cloud-builders/git'
     args:
-      - git
       - push
       - -u
       - origin 
