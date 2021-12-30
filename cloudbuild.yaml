@@ -37,7 +37,7 @@ steps:
       - remote 
       - add 
       - origin 
-      - git@github.com:sofisl/new-repo-test.git
+      - git@github.com:sofisl/testing-anew.git
   - name: 'gcr.io/cloud-builders/git'
     args:
       - push
