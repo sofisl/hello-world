@@ -14,6 +14,8 @@ steps:
       - --global
       - user.email
       - "you@example.com"
+  - name: ${_CONTAINER_SECOND}
+    dir: result
   - name: 'gcr.io/cloud-builders/git'
     args:
       - config
