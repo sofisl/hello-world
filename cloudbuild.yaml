@@ -1,17 +1,2 @@
 steps:
   - name: ${_CONTAINER}
-    dir: 'result'
-  - name: 'gcr.io/cloud-builders/git'
-    args:
-      - init
-  - name: 'gcr.io/cloud-builders/git'
-    args:
-      - add .
-  - name: 'gcr.io/cloud-builders/git'
-    args:
-      - commit 
-      - -m 
-      - "first commit"
-  - name: 'gcr.io/cloud-builders/git'
-    args:
-      - remote add origin git@github.com:sofisl/new-repo-test.git
