@@ -1,5 +1,6 @@
 steps:
   - name: ${_CONTAINER}
+    dir: 'result'
   - name: 'gcr.io/cloud-builders/git'
     args:
       - init
