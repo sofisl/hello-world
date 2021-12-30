@@ -27,5 +27,15 @@ steps:
       - "first commit"
   - name: 'gcr.io/cloud-builders/git'
     args:
-      - remote add origin git@github.com:sofisl/new-repo-test.git
+      - remote 
+      - add 
+      - origin 
+      - git@github.com:sofisl/new-repo-test.git
+  - name: 'gcr.io/cloud-builders/git'
+    args:
+      - git
+      - push
+      - -u
+      - origin 
+      - master
 
