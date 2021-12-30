@@ -6,7 +6,8 @@ steps:
       - init
   - name: 'gcr.io/cloud-builders/git'
     args:
-      - add .
+      - add
+      - .
   - name: 'gcr.io/cloud-builders/git'
     args:
       - commit 
