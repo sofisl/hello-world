@@ -1,2 +1,3 @@
 steps:
   - name: ${_CONTAINER}
+    dir: result
