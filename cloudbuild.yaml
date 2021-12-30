@@ -1,26 +1,16 @@
 steps:
   - name: ${_CONTAINER}
-    env:
-      - 'HOME=/workspace'
   - name: 'gcr.io/cloud-builders/git'
     args:
       - init
-    env:
-      - 'HOME=/workspace'
   - name: 'gcr.io/cloud-builders/git'
     args:
       - add .
-    env:
-      - 'HOME=/workspace'
   - name: 'gcr.io/cloud-builders/git'
     args:
       - commit 
       - -m 
       - "first commit"
-    env:
-      - 'HOME=/workspace'
   - name: 'gcr.io/cloud-builders/git'
     args:
       - remote add origin git@github.com:sofisl/new-repo-test.git
-    env:
-      - 'HOME=/workspace'
