@@ -11,8 +11,13 @@ steps:
   - name: 'gcr.io/cloud-builders/git'
     args:
       - config
+      - --global
       - user.email
       - "you@example.com"
+  - name: 'gcr.io/cloud-builders/git'
+    args:
+      - config
+      - --global
       - user.name
       - sofisl
   - name: 'gcr.io/cloud-builders/git'
