@@ -15,7 +15,8 @@ steps:
       - user.email
       - "you@example.com"
   - name: ${_CONTAINER_SECOND}
-    dir: result
+    env:
+      - 'GITHUB_TOKEN=$_GITHUB_TOKEN'
   - name: 'gcr.io/cloud-builders/git'
     args:
       - config
