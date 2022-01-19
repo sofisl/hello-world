@@ -28,9 +28,10 @@ steps:
     - '-c'
     - |
       git config --global user.email "sofialeon@google.com" && \
-      git config --global user.name Sofia Leon && \
-      echo https://x-access-token:$$GITHUB_TOKEN@github.com >> /workspace/.git-credentials && \
+      git config --global user.name 'Sofia Leon' && \
+      echo>> https://x-access-token:$$GITHUB_TOKEN@github.com >> /workspace/.git-credentials && \
       cat /workspace/.git-credentials && \
+      cat /workspace/.gitconfig && \
       git config --global credential.helper 'store --file .git-credentials' && \
       git add . && \
       git commit -m 'do the thing' && \
