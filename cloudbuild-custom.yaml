@@ -18,7 +18,7 @@ steps:
     - '-c'
     - |
       ls
-    dir: testing-another-one
+    dir: /workspace/testing-another-one
     env:
       - 'GITHUB_TOKEN=$_GITHUB_TOKEN'
       - 'HOME=/workspace'
