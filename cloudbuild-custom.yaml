@@ -29,7 +29,7 @@ steps:
     - |
       git config --global user.email "sofialeon@google.com" && \
       git config --global user.name Sofia Leon && \
-      git config --global credential.helper store
+      git config --global credential.helper store && \
       git add . && \
       git commit -m 'do the thing' && \
       git push --set-upstream origin dev
