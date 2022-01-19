@@ -10,6 +10,12 @@ steps:
     env:
       - 'GITHUB_TOKEN=$_GITHUB_TOKEN'
   - name: ${_CONTAINER}
+  - name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: 'bash'
+    args:
+    - '-c'
+    - |
+      ls
   - name: 'gcr.io/cloud-builders/git'
     entrypoint: /bin/sh
     args:
