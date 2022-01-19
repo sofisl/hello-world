@@ -1,11 +1,10 @@
 steps:
-
   - name: 'gcr.io/cloud-builders/git'
     entrypoint: /bin/sh
     args:
     - '-c'
     - |
-      git clone git@github.com:sofisl/testing-another-one.git && \
+      git clone https://x-access-token:$GITHUB_TOKEN@github.com:sofisl/testing-another-one.git && \
       cd testing-another-one/ && \
       git checkout -b dev   
     env:
