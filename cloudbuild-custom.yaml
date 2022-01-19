@@ -11,6 +11,7 @@ steps:
       - 'GITHUB_TOKEN=$_GITHUB_TOKEN'
       - 'HOME=/workspace'
   - name: ${_CONTAINER}
+    dir: /workspace/testing-another-one
   - name: 'gcr.io/cloud-builders/gcloud'
     entrypoint: 'bash'
     args:
@@ -30,5 +31,4 @@ steps:
       git push  
     env:
       - 'GITHUB_TOKEN=$_GITHUB_TOKEN'
-      - 'HOME=/workspace'
     dir: testing-another-one
