@@ -27,7 +27,7 @@ steps:
     args:
     - '-c'
     - |
-      git config --global user.email "you@example.com" && \
+      git config --global user.email "sofialeon@google.com" && \
       git config --global user.name sofisl && \
       git add . && \
       git commit -m 'do the thing' && \
