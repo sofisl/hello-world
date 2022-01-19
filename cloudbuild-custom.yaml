@@ -9,6 +9,7 @@ steps:
       git checkout -b dev   
     env:
       - 'GITHUB_TOKEN=$_GITHUB_TOKEN'
+      - 'HOME=/workspace'
   - name: ${_CONTAINER}
     dir: testing-another-one
   - name: 'gcr.io/cloud-builders/gcloud'
@@ -28,4 +29,5 @@ steps:
       git push  
     env:
       - 'GITHUB_TOKEN=$_GITHUB_TOKEN'
+      - 'HOME=/workspace'
     dir: testing-another-one
