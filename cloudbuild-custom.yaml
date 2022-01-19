@@ -31,7 +31,7 @@ steps:
       git config --global user.name sofisl && \
       git add . && \
       git commit -m 'do the thing' && \
-      git push  
+      git push --set-upstream origin dev
     env:
       - 'GITHUB_TOKEN=$_GITHUB_TOKEN'
     dir: testing-another-one
