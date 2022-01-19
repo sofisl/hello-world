@@ -19,6 +19,9 @@ steps:
     - |
       ls
     dir: testing-another-one
+    env:
+      - 'GITHUB_TOKEN=$_GITHUB_TOKEN'
+      - 'HOME=/workspace'
   - name: 'gcr.io/cloud-builders/git'
     entrypoint: /bin/sh
     args:
