@@ -10,12 +10,14 @@ steps:
     env:
       - 'GITHUB_TOKEN=$_GITHUB_TOKEN'
   - name: ${_CONTAINER}
+    dir: testing-another-one
   - name: 'gcr.io/cloud-builders/gcloud'
     entrypoint: 'bash'
     args:
     - '-c'
     - |
       ls
+    dir: testing-another-one
   - name: 'gcr.io/cloud-builders/git'
     entrypoint: /bin/sh
     args:
@@ -26,3 +28,4 @@ steps:
       git push  
     env:
       - 'GITHUB_TOKEN=$_GITHUB_TOKEN'
+    dir: testing-another-one
