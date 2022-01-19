@@ -6,7 +6,8 @@ steps:
     - |
       git clone https://github.com/sofisl/testing-another-one.git && \
       cd testing-another-one/ && \
-      git checkout -b dev   
+      git checkout -b dev && \
+      git branch
     env:
       - 'GITHUB_TOKEN=$_GITHUB_TOKEN'
       - 'HOME=/workspace'
