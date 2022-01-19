@@ -4,7 +4,7 @@ steps:
     args:
     - '-c'
     - |
-      git clone https://x-access-token:$_GITHUB_TOKEN@github.com:sofisl/testing-another-one.git && \
+      git clone git@github.com:sofisl/testing-another-one.git && \
       cd testing-another-one/ && \
       git checkout -b dev   
     env:
