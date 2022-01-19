@@ -1,0 +1,23 @@
+steps:
+
+  - name: 'gcr.io/cloud-builders/git'
+    entrypoint: /bin/sh
+    args:
+    - '-c'
+    - |
+      git clone git@github.com:sofisl/testing-another-one.git && \
+      cd testing-another-one/ && \
+      git checkout -b dev   
+    env:
+      - 'GITHUB_TOKEN=$_GITHUB_TOKEN'
+  - name: ${_CONTAINER}
+  - name: 'gcr.io/cloud-builders/git'
+    entrypoint: /bin/sh
+    args:
+    - '-c'
+    - |
+      git add . \
+      git commit -m 'do the thing' \
+      git push  
+    env:
+      - 'GITHUB_TOKEN=$_GITHUB_TOKEN'
