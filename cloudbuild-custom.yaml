@@ -15,8 +15,8 @@ steps:
     args:
     - '-c'
     - |
-      git add . \
-      git commit -m 'do the thing' \
+      git add . && \
+      git commit -m 'do the thing' && \
       git push  
     env:
       - 'GITHUB_TOKEN=$_GITHUB_TOKEN'
