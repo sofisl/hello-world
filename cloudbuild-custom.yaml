@@ -28,7 +28,7 @@ steps:
     - '-c'
     - |
       git config --global user.email "sofialeon@google.com" && \
-      git config --global user.name sofisl && \
+      git config --global user.name Sofia Leon && \
       git add . && \
       git commit -m 'do the thing' && \
       git push --set-upstream origin dev
