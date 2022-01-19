@@ -30,7 +30,7 @@ steps:
       echo https://x-access-token:$$GITHUB_TOKEN@github.com >> /workspace/.git-credentials && \
       git config --global user.email "sofialeon@google.com" && \
       git config --global user.name Sofia Leon && \
-      echo https://x-access-token:$$GITHUB_TOKEN@github.com >> /workspace/.git-credentials
+      echo https://x-access-token:$$GITHUB_TOKEN@github.com >> /workspace/.git-credentials && \
       git config --global credential.helper store && \
       git add . && \
       git commit -m 'do the thing' && \
