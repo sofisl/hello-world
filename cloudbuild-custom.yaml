@@ -29,6 +29,8 @@ steps:
     - |
       git config --global user.email "sofialeon@google.com" && \
       git config --global user.name Sofia Leon && \
+      git remote rm origin && /
+      git remote add origin 'git@github.com:sofisl/testing-another-one.git' && /
       git add . && \
       git commit -m 'do the thing' && \
       git push --set-upstream origin dev
