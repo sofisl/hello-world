@@ -1,5 +1,12 @@
 steps:
   - name: ${_CONTAINER}
+    env:
+    - 'LANGUAGE=$_LANGUAGE'
+    - 'PROJECT_ID=$PROJECT_ID'
+    - 'API_ID=$_API_ID'
+    - 'REPO_TO_CLONE=$_REPO_TO_CLONE'
+    - 'IS_PRE_PROCESS=$_IS_PRE_PROCESS'
+    - 'INSTALLATION_ID=$_INSTALLATION_ID'
   - name: ${_LANGUAGE_CONTAINER}
   - name: ${_CONTAINER}
     env:
