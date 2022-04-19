@@ -1,48 +1,6 @@
 steps:
   - name: ${_CONTAINER}
-    dir: result
-  - name: 'gcr.io/cloud-builders/git'
-    args:
-      - init
-  - name: 'gcr.io/cloud-builders/git'
-    args:
-      - add
-      - .
-  - name: 'gcr.io/cloud-builders/git'
-    args:
-      - config
-      - --global
-      - user.email
-      - "you@example.com"
-  - name: ${_CONTAINER_SECOND}
-    env:
-      - 'GITHUB_TOKEN=$_GITHUB_TOKEN'
-  - name: 'gcr.io/cloud-builders/git'
-    args:
-      - config
-      - --global
-      - user.name
-      - sofisl
-  - name: 'gcr.io/cloud-builders/git'
-    args:
-      - commit 
-      - -m 
-      - "first commit"
-  - name: 'gcr.io/cloud-builders/git'
-    args:
-      - remote
-      - remove 
-      - origin
-  - name: 'gcr.io/cloud-builders/git'
-    args:
-      - remote 
-      - add 
-      - origin 
-      - git@github.com:sofisl/testing-another-one.git
-  - name: 'gcr.io/cloud-builders/git'
-    args:
-      - push
-      - -u
-      - origin 
-      - master
+    args: ["on"]
+  - name: ${_CONTAINER}
+    args: ["off"]
 
